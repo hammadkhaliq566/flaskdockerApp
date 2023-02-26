@@ -120,4 +120,12 @@ docker run -d -p <port>:80 --name myfirstapp myapp:latest
 ```sh
 docker ps
 ```
+5. Testing in the Browser
 
+To access your Application, simply pick the public IP address of the instance and add the port number to the end of the URL
+For example http://your-ip:port-number
+
+
+### Troubleshooting
+
+1. If you encounter an error while accessing your application on EC2, it may be due to the security group settings, so please ensure that the port number you are using to run the container is allowed in the inbound rules of the EC2 instance's security group.
