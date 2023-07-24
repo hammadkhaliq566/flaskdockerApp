@@ -5,11 +5,12 @@ This Flask containerized application displays a simple "Hello World" message.
 
 ![docker](https://user-images.githubusercontent.com/82409763/221435713-9dfc4d09-550b-4369-8eed-4054761579a0.jpg)
 
-# Installing Docker on Amazon Linux server
+# Installing Docker on the Amazon Linux server
 
 ### Pre-requisites
 
 1. Amazon Linux EC2 Instance
+2. A Docker Hub account. If you don't have one, sign up for free at https://hub.docker.com/
 
 ## Installation Steps
 
@@ -115,7 +116,7 @@ docker images
 docker run -d -p <port>:80 --name myfirstapp myapp:latest
 ```
 
-4. Run the following command to check running container
+4. Run the following command to check the running container
 
 ```sh
 docker ps
@@ -125,6 +126,35 @@ docker ps
 To access your Application, simply pick the public IP address of the instance and add the port number to the end of the URL
 For example http://your-ip:port-number
 
+### Pushing Docker Image to Docker Hub
+Docker Hub is a cloud-based registry service provided by Docker that allows you to store and share Docker images with others.
+
+Follow these steps to Push a Docker image to Docker Hub:
+
+1. Log in to Docker Hub
+2. Tag your Docker Image
+Before pushing the image, you need to tag it with your Docker Hub username and the repository name.
+
+```sh
+docker tag myapp:v1 <username>/<repository>:v1
+```
+
+3. Push the Docker Image
+To push the image to Docker Hub, use the following command:
+
+```sh
+docker push <username>/<repository>:v1
+```
+The image will be uploaded to Docker Hub, and it will be available for others to pull.
+
+### Pulling Docker Image from Docker Hub
+Follow these steps to pull a Docker image from Docker Hub:
+
+1. Pull the Docker Image
+To pull an image from Docker Hub, use the docker pull command followed by the image name and tag
+```sh
+docker pull my_username/my_repository:v1
+``` 
 
 ### Troubleshooting
 
