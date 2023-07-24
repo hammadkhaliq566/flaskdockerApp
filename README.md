@@ -1,8 +1,7 @@
 
-# Flask Containerized App
+# Flask Containerized App - Hello Message
 
-This Flask containerized application displays a simple "Hello World" message.
-
+Welcome to the Flask Containerized App project! This project aims to demonstrate the setup and deployment of a simple Flask web application that displays a hello message. The application is containerized using Docker, allowing for easy packaging, distribution, and execution of the app in any environment.
 ![docker](https://user-images.githubusercontent.com/82409763/221435713-9dfc4d09-550b-4369-8eed-4054761579a0.jpg)
 
 # Installing Docker on the Amazon Linux server
@@ -96,7 +95,7 @@ if __name__ == "__main__":
 
 ```
 
-### Build and test the Docker image
+# Build the Docker image
 
 1. Run the following command to build the Docker image:
 
@@ -110,7 +109,7 @@ docker build -t myapp .
 docker images
 ```
 
-3. Run the following command to start a container from the image:
+3. Run the following command to run a container from the image:
 
 ```sh
 docker run -d -p <port>:80 --name myfirstapp myapp:latest
@@ -122,10 +121,10 @@ docker run -d -p <port>:80 --name myfirstapp myapp:latest
 docker ps
 ```
 5. Testing in the Browser
+    To access your Application, simply pick the public IP address of the instance and add the port number to the end of the URL
+    For example http://your-ip:port-number
 
-To access your Application, simply pick the public IP address of the instance and add the port number to the end of the URL
-For example http://your-ip:port-number
-
+#  Push and Pull Docker Images from Docker Hub
 ### Pushing Docker Image to Docker Hub
 Docker Hub is a cloud-based registry service provided by Docker that allows you to store and share Docker images with others.
 
@@ -156,6 +155,5 @@ To pull an image from Docker Hub, use the docker pull command followed by the im
 docker pull my_username/my_repository:v1
 ``` 
 
-### Troubleshooting
-
-1. If you encounter an error while accessing your application on EC2, it may be due to the security group settings, so please ensure that the port number you are using to run the container is allowed in the inbound rules of the EC2 instance's security group.
+# Troubleshooting
+If you encounter an error while accessing your application on EC2, it may be due to the security group settings, so please ensure that the port number you are using to run the container is allowed in the inbound rules of the EC2 instance's security group.
